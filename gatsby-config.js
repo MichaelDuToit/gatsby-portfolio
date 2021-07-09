@@ -1,17 +1,23 @@
+
+// Get the data from the .env file which holds Secret keys.
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://michaeldutoit.netlify.app",
     title: "Michael du Toit Portfolio",
   },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken:
-          "0725613dfc3fae0832de7ec5b5d63940aed45168e0df0f8b68dd38b0c0c2258a",
-        spaceId: "",
+        accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
+        spaceId: process.env.CONTENTFUL_SPACEID
       },
     },
     "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp"
   ],
 };

@@ -1,0 +1,85 @@
+@import "variables.scss";
+
+nav {
+    position: relative;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-bottom: 2px solid $border-color;
+    z-index:10;
+    h2 {
+        color: #fff;
+        align-self: flex-start;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        align-self: center;
+        padding: 1rem;
+        a {
+            text-decoration: none;
+            display:block;
+            font-size: inherit;
+            color: inherit;
+            &:visited {
+                color: $white;
+            }
+        }
+    }
+    ul {
+        position: relative;
+        z-index:20;
+        display: flex;
+        align-self: flex-end;
+        justify-content: flex-end;
+        flex-direction: row;
+        text-align: right;
+        color: $white;
+        list-style: none;
+        padding: 0.5rem 0rem;
+        width: 100%;
+        background-color: transparent;
+        li {
+            display: inline-block;
+            font-size: 1.15rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+            @extend %link-hover-effect;
+        }
+        &.visible {
+            display: flex;
+        }
+    }
+    &.hasLanding {
+        position: absolute !important;
+        border:0;
+        h2 {
+            display:none;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-med){
+    nav {
+        flex-direction: row;
+        h2 {
+            padding: 0 0 0 2rem;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            li {
+                &:last-of-type {
+                    padding-right:2rem;
+                }
+            }
+        }
+        button {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import 'variables.scss';
+
+.landing {
+    display: flex;
+    width:100%;
+    min-width:100%;
+    height:100%;
+    min-height: 100%;
+    min-height: 99vh;
+    height: 100vh;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    border-bottom: 2px solid $border-color;
+    h1 {
+        font-size: 3.5rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+    .downArrow {
+        position: absolute;
+        left:50%;
+        right:50%;
+        bottom:10vh;
+        transform: rotate(90deg);
+        font-weight: bold;
+        font-size: 6rem;
+        z-index: 20;
+        animation: arrowSlider 3s 1s infinite;
+    }
+}
+
+@keyframes arrowSlider {
+    0%, 100% {
+        transform: translate(0,0) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, 5vh) rotate(90deg);
+    }
+}
