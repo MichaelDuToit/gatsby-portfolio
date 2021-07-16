@@ -1,0 +1,35 @@
+@import '../components/variables.scss';
+
+.projectPage {
+    margin:1.25rem 15%;
+    text-align: center;
+    min-height:85vh;
+    p {
+        margin:0;
+        padding:0;
+    }
+    img {
+        height:20rem;
+        max-width: 100%;
+        margin-bottom:1.25rem;
+    }
+    h2.projectName {
+        display: block;
+        width:100%;
+        text-align: center;
+    }
+    p.techStack {
+        font-size:0.95rem;
+        font-style: italic;
+        font-weight: bold;
+        padding-bottom: 1rem;
+        color: $slate;
+    }
+    .content {
+        text-align: left;
+        a {
+            display:block;
+            padding:0.6rem 0rem 0.3rem 0rem;
+        }
+    }
+}

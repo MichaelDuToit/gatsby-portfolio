@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from "./landing.module.scss"
+import * as styles from "./landing.scss"
 
 class Landing extends React.Component {
     render(){
         return (
-            <div className={`${styles.landing} background-navigation`} >
+            <div className={`landing background-navigation backgroundAnimation`} >
                 <h1>Michael du Toit</h1>
                 <h3>Full Stack Developer</h3>
-                <span className={styles.downArrow}>&rsaquo;</span>
+                <span className={`downArrow`}>&rsaquo;</span>
             </div>
         )
     }

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import styles from './projectCard.module.scss';
+import * as styles from './projectCard.module.scss';
 
-const ProjectCard = ({ projectName, featureImage, slug}) => {
+const ProjectCard = ({ projectName, headerImage, slug}) => {
     return(
-        <Link to={`/project/${slug}`} title={projectName}>
-            <img src={featureImage.file.url} alt={projectName} />
+        <Link to={`/project/${slug}`} title={projectName} className={styles.projectCard}>
+            <img src={headerImage.file.url} alt={projectName} />
             <figcaption>
                 <h3>{projectName}</h3>
             </figcaption>

@@ -1,6 +1,6 @@
 // Import NPM packages
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 // Import project components
 import Navigation from "../components/navigation";
@@ -12,14 +12,37 @@ import "../components/global.scss";
 import ProjectCard from "../components/projectCard";
 
 const IndexPage = ({ data }) => {
-  // GraphQL query get projects
-  const projects = useStaticQuery(grapql`
-  allContentfulNgProject(sort: { fields: [displayOrder], order: ASC }){
+  const projects = data.allContentfulNgProject.edges;
+
+  return(
+    <>
+      <Navigation hasLanding={true} />
+      <Landing />
+      <div className="project-items-container" id="projects">
+        {
+          projects.map(({node}) => (
+            <ProjectCard key={node.displayOrder} {...node} />
+          ))
+        }
+      </div>
+      <Footer />
+    </>
+    );
+}
+
+export default IndexPage;
+
+export const projectsQuery = graphql`
+query {
+  allContentfulNgProject(sort: { fields: [displayOrder], order: ASC} ) {
     edges {
       node {
         displayOrder,
         projectName,
         slug,
+        techStack {
+          techStack
+        }
         headerImage {
           file {
             url
@@ -28,20 +51,5 @@ const IndexPage = ({ data }) => {
       }
     }
   }
-`);
-
-  return(
-    <>
-    <Navigation hasLanding={true} />
-    <Landing />
-      {
-        projects.map(({node}) => (
-          <ProjectCard key={node.displayOrder} {...node} />
-        ))
-      }
-    <Footer />
-    </>
-    );
 }
-
-export default IndexPage;
+`

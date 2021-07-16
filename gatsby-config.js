@@ -6,6 +6,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://michaeldutoit.netlify.app",
     title: "Michael du Toit Portfolio",
+    author: "Michael du Toit"
   },
   plugins: [
     {
@@ -18,6 +19,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp"
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
   ],
 };

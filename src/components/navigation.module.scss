@@ -28,10 +28,8 @@ nav {
             }
         }
     }
-    ul {
-        position: relative;
-        z-index:20;
-        display: flex;
+    ul {       
+        display: flex ;
         align-self: flex-end;
         justify-content: flex-end;
         flex-direction: row;
@@ -83,3 +81,4 @@ nav {
         }
     }
 }
+
