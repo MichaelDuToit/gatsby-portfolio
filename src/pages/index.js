@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
     <>
       <Navigation hasLanding={true} />
       <Landing />
-      <div class="projectsContainer">
+      <div className="projectsContainer">
         <h2 className="header">Projects</h2>
         <div className="projectItemsContainer" id="projects">
           {

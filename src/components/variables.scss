@@ -6,9 +6,11 @@ $darkenedblue: darken(#1f66e5, 10%);
 $white: #fff;
 $border-color: #483d48;
 $slate: #708090;
+
 $breakpoint-small: 350px;
 $breakpoint-med: 600px;
-
+$breakpoint-med-large: 850px;
+$breakpoint-large: 1200px;
 
 %link-hover-effect {
     a {

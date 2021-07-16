@@ -48,6 +48,7 @@ a {
     background: linear-gradient(-45deg, $darkblue, $lightblue, $pink, $lightblue, $darkblue);
     background-size: 450% 100%;
 }
+
 .projectsContainer {
     display: flex;
     align-content: center;
@@ -61,12 +62,29 @@ a {
         padding-bottom: 0.25rem;
     }
 }
+
 .projectItemsContainer {
-    display: flex;
-    align-content: flex-start;
-    justify-content: space-between;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
 }
+
+@media (min-width: $breakpoint-med){
+    .projectItemsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: $breakpoint-med-large){
+    .projectItemsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: $breakpoint-large){
+    .projectItemsContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .notFoundPage {
     display: flex;
     flex-direction: column;
