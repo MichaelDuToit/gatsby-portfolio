@@ -12,10 +12,10 @@ const ProjectPage = ({ data, pageContext }) => {
         <>
           <Navigation />
           <div className={style.projectPage}>
-              <h2 className={style.projectName}>{project.projectName}</h2>
-              <p className={style.techStack}>{project.techStack.techStack}</p>
+              <h2 className={style.projectName}>{project.projectName}</h2>              
               <img src={project.headerImage.file.url} alt={project.projectName} />
-              <div className={style.content} dangerouslySetInnerHTML={{ __html: project.content.content}} />
+              <p className={style.techStack}>{project.techStack.techStack}</p>
+              <div className={style.content} dangerouslySetInnerHTML={{ __html: project.content.childMarkdownRemark.html}} />
           </div>
           <Footer />
         </>
@@ -34,7 +34,9 @@ export const query = graphql`
               techStack
             }
             content {
-              content
+              childMarkdownRemark {
+                html
+              }
             }
             headerImage {
               file {

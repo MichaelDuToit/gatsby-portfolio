@@ -18,12 +18,15 @@ const IndexPage = ({ data }) => {
     <>
       <Navigation hasLanding={true} />
       <Landing />
-      <div className="project-items-container" id="projects">
-        {
-          projects.map(({node}) => (
-            <ProjectCard key={node.displayOrder} {...node} />
-          ))
-        }
+      <div class="projectsContainer">
+        <h2 className="header">Projects</h2>
+        <div className="projectItemsContainer" id="projects">
+          {
+            projects.map(({node}) => (
+              <ProjectCard key={node.displayOrder} {...node} />
+            ))
+          }
+        </div>
       </div>
       <Footer />
     </>
@@ -40,6 +43,7 @@ query {
         displayOrder,
         projectName,
         slug,
+        description
         techStack {
           techStack
         }

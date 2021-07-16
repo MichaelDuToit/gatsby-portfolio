@@ -1,5 +1,5 @@
 @import 'variables.scss';
-$cardSize: 19rem;
+$cardSize: 18rem;
 
 .projectCard {
     position: relative;
@@ -28,7 +28,6 @@ $cardSize: 19rem;
             color: $darkenedblue;
         }
         .description {
-            //display: none;
             height: 0;
             overflow: hidden;
             color: #666;

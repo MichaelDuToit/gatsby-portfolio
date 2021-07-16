@@ -18,14 +18,9 @@ nav {
         white-space: nowrap;
         align-self: center;
         padding: 1rem;
+        @extend %link-hover-effect;
         a {
-            text-decoration: none;
-            display:block;
-            font-size: inherit;
-            color: inherit;
-            &:visited {
-                color: $white;
-            }
+            font-size: 1.75rem;
         }
     }
     ul {       

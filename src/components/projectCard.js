@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import * as styles from './projectCard.module.scss';
 
-const ProjectCard = ({ projectName, headerImage, slug }) => {
+const ProjectCard = ({ projectName, headerImage, slug, description }) => {
     return (
         <Link to={`/project/${slug}`} className={styles.projectCard}>
             <div className={styles.thumbnail}>
@@ -12,7 +12,7 @@ const ProjectCard = ({ projectName, headerImage, slug }) => {
             <div className={styles.cardContent}>
                 <h2>{projectName}</h2>
                 <p className={styles.description}>
-                    This is my short project description, blah blah blah blah. blah blah blah blah.
+                    {description}
                 </p>
             </div>
         </Link>

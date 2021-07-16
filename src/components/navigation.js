@@ -7,7 +7,7 @@ class Navigation extends React.Component {
         return (
             <nav className={this.props.hasLanding ? styles.hasLanding : "backgroundAnimation"}>
                 {
-                    this.props.hasLanding ? "" : <Link to="/"><h2>Michael du Toit</h2></Link>
+                    this.props.hasLanding ? "" : <h2><Link to="/">Michael du Toit</Link></h2>
                 }
                 <ul id="menu">
                     <li><Link to="/">Home</Link></li>
