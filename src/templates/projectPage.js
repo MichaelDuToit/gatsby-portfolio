@@ -4,6 +4,7 @@ import Navigation from '../components/navigation';
 import Footer from '../components/footer';
 import * as style from './projectPage.module.scss';
 import '../components/global.scss';
+import Seo from '../components/seo';
 
 
 const ProjectPage = ({ data, pageContext }) => {
@@ -12,6 +13,7 @@ const ProjectPage = ({ data, pageContext }) => {
     const techStackArray = techStack.split(',');
     return (
         <>
+          <Seo title={project.projectName} />
           <Navigation />
           <div className={style.projectPage}>
               <h2 className={style.projectName}>{project.projectName}</h2>              

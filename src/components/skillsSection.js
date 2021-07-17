@@ -8,8 +8,8 @@ const SkillsSection = ({ props }) => {
 
     return (
         <div className={style.defaultSection}>
-            <h2 className="centerHeader">{props.title}</h2>
-            <div className="centerHeader">
+            <h2 className="centerHeader" id={props.title}>{props.title}</h2>
+            <div className={style.skillsContainer}>
                 {
                     skillsArray.map((item, index) => (
                         <span key={index} className="techItemLarge">{item}</span>

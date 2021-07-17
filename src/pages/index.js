@@ -9,6 +9,7 @@ import Landing from "../components/landing";
 import ProjectCard from "../components/projectCard";
 import TextSection from "../components/textSection";
 import SkillsSection from "../components/skillsSection";
+import Seo from '../components/seo';
 
 //Import global styles
 import "../components/global.scss";
@@ -20,12 +21,13 @@ const IndexPage = ({ data }) => {
 
   return(
     <>
+      <Seo />
       <Navigation hasLanding={true} />
       <Landing />
-      <TextSection id={"about"} {...aboutMe} />
+      <TextSection id={"About"} {...aboutMe} />
       <div className="projectsContainer">
         <h2 className="centerHeader">Projects</h2>
-        <div className="projectItemsContainer" id="projects">
+        <div className="projectItemsContainer" id="Projects">
           {
             projects.map(({node}) => (
               <ProjectCard key={node.displayOrder} {...node} />

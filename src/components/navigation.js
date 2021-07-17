@@ -11,9 +11,9 @@ class Navigation extends React.Component {
                 }
                 <ul id="menu">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/#about">About Me</Link></li>
-                    <li><Link to="/#projects">Projects</Link></li>
-                    <li><Link to="/#skills">Skills</Link></li>
+                    <li><Link to="/#About">About Me</Link></li>
+                    <li><Link to="/#Projects">Projects</Link></li>
+                    <li><Link to="/#Skills">Skills</Link></li>
                 </ul>
             </nav>
         )
