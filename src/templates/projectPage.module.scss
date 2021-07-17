@@ -20,8 +20,10 @@
         margin-bottom: 1rem;
     }
     .techStackContainer {
-        display: block;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
         margin-bottom: 2rem;
         box-sizing: border-box;
         .item {
