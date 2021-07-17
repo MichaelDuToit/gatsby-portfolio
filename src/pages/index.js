@@ -8,17 +8,15 @@ import Footer from "../components/footer";
 import Landing from "../components/landing";
 import ProjectCard from "../components/projectCard";
 import TextSection from "../components/textSection";
-import Skills from "../components/skills";
+import SkillsSection from "../components/skillsSection";
 
 //Import global styles
 import "../components/global.scss";
 
-
-
 const IndexPage = ({ data }) => {
   const projects = data.allContentfulNgProject.edges;
   const aboutMe = data.contentfulBasic;
-  const skillsList = data.contentfulSkillsList;
+  const skills = data.contentfulSkillsList;
 
   return(
     <>
@@ -35,7 +33,7 @@ const IndexPage = ({ data }) => {
           }
         </div>
       </div>
-      <Skills id={"skills"} {...skillsList} />
+      <SkillsSection props={skills} />
       <Footer />
     </>
     );
@@ -71,5 +69,9 @@ query {
       }
     }
   }
+  contentfulSkillsList(title: {eq: "Skills"}) {
+    technologyName
+    title
+  }  
 }
 `;

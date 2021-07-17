@@ -1,0 +1,11 @@
+@import "variables.scss";
+
+.defaultSection {
+    margin: 10%;
+}
+.skillsContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
