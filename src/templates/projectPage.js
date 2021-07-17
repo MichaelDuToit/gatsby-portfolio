@@ -8,13 +8,21 @@ import '../components/global.scss';
 
 const ProjectPage = ({ data, pageContext }) => {
     const project = data.allContentfulNgProject.edges[pageContext.id].node;
+    let techStack = project.techStack.techStack;
+    const techStackArray = techStack.split(',');
     return (
         <>
           <Navigation />
           <div className={style.projectPage}>
               <h2 className={style.projectName}>{project.projectName}</h2>              
               <img src={project.headerImage.file.url} alt={project.projectName} />
-              <p className={style.techStack}>{project.techStack.techStack}</p>
+              <div className={style.techStackContainer}>
+                {
+                  techStackArray.map( item => (
+                    <span className={style.item}>{item.trim()}</span>
+                  ))
+                }
+              </div>
               <div className={style.content} dangerouslySetInnerHTML={{ __html: project.content.childMarkdownRemark.html}} />
           </div>
           <Footer />

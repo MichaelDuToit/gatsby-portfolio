@@ -6,10 +6,11 @@ import { graphql } from "gatsby";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import Landing from "../components/landing";
+import ProjectCard from "../components/projectCard";
 
 //Import global styles
 import "../components/global.scss";
-import ProjectCard from "../components/projectCard";
+
 
 const IndexPage = ({ data }) => {
   const projects = data.allContentfulNgProject.edges;

@@ -55,7 +55,6 @@ a {
     justify-content: center;
     flex-direction: column;
     margin: 2% 10%;
-
     .header {
         font-style: italic;
         text-align: center;
@@ -112,8 +111,5 @@ a {
 @media (min-width: $breakpoint-med){
     .backgroundAnimation {
         animation-duration: 10s;
-    }
-    .project-items-container {
-        padding:0% 10%;
     }
 }
