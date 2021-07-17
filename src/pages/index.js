@@ -2,25 +2,31 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-// Import project components
+// Import components
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import Landing from "../components/landing";
 import ProjectCard from "../components/projectCard";
+import TextSection from "../components/textSection";
+import Skills from "../components/skills";
 
 //Import global styles
 import "../components/global.scss";
 
 
+
 const IndexPage = ({ data }) => {
   const projects = data.allContentfulNgProject.edges;
+  const aboutMe = data.contentfulBasic;
+  const skillsList = data.contentfulSkillsList;
 
   return(
     <>
       <Navigation hasLanding={true} />
       <Landing />
+      <TextSection id={"about"} {...aboutMe} />
       <div className="projectsContainer">
-        <h2 className="header">Projects</h2>
+        <h2 className="centerHeader">Projects</h2>
         <div className="projectItemsContainer" id="projects">
           {
             projects.map(({node}) => (
@@ -29,6 +35,7 @@ const IndexPage = ({ data }) => {
           }
         </div>
       </div>
+      <Skills id={"skills"} {...skillsList} />
       <Footer />
     </>
     );
@@ -36,7 +43,7 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage;
 
-export const projectsQuery = graphql`
+export const query = graphql`
 query {
   allContentfulNgProject(sort: { fields: [displayOrder], order: ASC} ) {
     edges {
@@ -53,6 +60,14 @@ query {
             url
           }
         }
+      }
+    }
+  }
+  contentfulBasic(slug: {eq: "/about-me"}) {
+    title
+    content {
+      childMarkdownRemark {
+        html
       }
     }
   }

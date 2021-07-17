@@ -55,11 +55,12 @@ a {
     justify-content: center;
     flex-direction: column;
     margin: 2% 10%;
-    .header {
-        font-style: italic;
-        text-align: center;
-        padding-bottom: 0.25rem;
-    }
+}
+
+.centerHeader {
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 0.25rem;
 }
 
 .projectItemsContainer {
